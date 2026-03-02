@@ -1,0 +1,17 @@
+export const ROUTES = {
+  HOME: '/',
+  DRACHENHOEHLE: '/drachenhoehle',
+  DRACHENKIDS: '/drachenkids',
+  EINGLIEDERUNGSHILFE: '/eingliederungshilfe',
+  BETREUUNGSLEISTUNGEN: '/betreuungsleistungen',
+  SCOTSON_THERAPIE: '/scotson-therapie',
+  KONDUKTIVE_FOERDERUNG: '/konduktive-foerderung',
+  NEUIGKEITEN: '/neuigkeiten',
+  FREIWILLIGENBEREICH: '/freiwilligenbereich',
+  SPIELSTRASSE: '/spielstrasse',
+  SPENDEN: '/spenden',
+  TRAEGER: '/traeger',
+  TRANSPARENZ: '/transparenz',
+  IMPRESSUM: '/impressum',
+  KITA_ANMELDUNG: '/kita-anmeldung',
+} as const;

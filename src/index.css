@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Drachenreiter Brand Colors */
+    --dragon-green: 72 88% 31%;
+    --berlin-charcoal: 0 0% 18%;
+    --warm-white: 36 33% 97%;
+    --golden-wing: 43 60% 56%;
+    --sage-green: 126 16% 55%;
+    --soft-lavender: 275 14% 59%;
+    --deep-blue: 207 36% 28%;
+    --coral-touch: 14 68% 62%;
+    --sky-mist: 200 35% 94%;
+    
+    /* shadcn overrides */
+    --background: 36 33% 97%;
+    --foreground: 0 0% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 18%;
+    --primary: 72 88% 31%;
+    --primary-foreground: 36 33% 97%;
+    --secondary: 200 35% 94%;
+    --secondary-foreground: 0 0% 18%;
+    --muted: 200 35% 94%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 43 60% 56%;
+    --accent-foreground: 0 0% 18%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 72 88% 31%;
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-ui {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  /* Button Styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 font-ui font-semibold text-sm rounded-lg transition-all duration-300;
+    background: hsl(var(--golden-wing));
+    color: hsl(var(--berlin-charcoal));
+  }
+  
+  .btn-primary:hover {
+    background: #c49a3f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 168, 75, 0.3);
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 font-ui font-semibold text-sm rounded-lg transition-all duration-300 border-2;
+    background: transparent;
+    color: hsl(var(--warm-white));
+    border-color: rgba(250, 248, 245, 0.5);
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(250, 248, 245, 0.1);
+    border-color: hsl(var(--warm-white));
+  }
+  
+  .btn-cta {
+    @apply inline-flex items-center justify-center px-10 py-5 font-ui font-semibold text-lg rounded-full transition-all duration-300;
+    background: hsl(var(--warm-white));
+    color: hsl(var(--dragon-green));
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-cta:hover {
+    background: #fff;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Section Styles */
+  .section-padding {
+    @apply py-20 md:py-28 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  /* Gradient Backgrounds */
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--dragon-green)) 0%, hsl(var(--deep-blue)) 100%);
+  }
+  
+  .gradient-warm {
+    background: linear-gradient(180deg, hsl(var(--warm-white)) 0%, hsl(var(--sky-mist)) 100%);
+  }
+  
+  .gradient-cta {
+    background: linear-gradient(135deg, hsl(var(--dragon-green)) 0%, #718907 100%);
+  }
+  
+  /* Dragon Scale Pattern */
+  .pattern-dragon {
+    position: relative;
+  }
+  
+  .pattern-dragon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-size: 80px 80px;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  /* Card Hover Effect */
+  .card-hover {
+    @apply transition-all duration-400;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Animation Utilities */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes bounce-slow {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+  }
+  
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes count-up {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce-slow 2s infinite;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+  
+  /* Form Styles */
+  .form-input {
+    @apply w-full px-5 py-4 font-body text-base rounded-xl transition-all duration-300;
+    background: #F8F8F8;
+    border: 2px solid transparent;
+    color: hsl(var(--berlin-charcoal));
+  }
+  
+  .form-input::placeholder {
+    color: #999;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    background: #fff;
+    border-color: hsl(var(--dragon-green));
+    box-shadow: 0 0 0 4px rgba(125, 153, 8, 0.1);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--warm-white));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--dragon-green));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #718907;
+}

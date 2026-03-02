@@ -1,0 +1,16 @@
+{
+  "name": "Drachenreiter Berlin",
+  "short_name": "Drachenreiter",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F6F0",
+  "theme_color": "#7d9808",
+  "lang": "de",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
