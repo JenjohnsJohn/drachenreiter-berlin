@@ -125,6 +125,7 @@ const SpielstrassePage = () => {
               <SectionHeader
                 label="Mitmachen"
                 title="Was Sie mitbringen können"
+                as="h3"
               />
               <div className="flex flex-wrap gap-2">
                 {bringAlong.map((item) => (
@@ -141,6 +142,7 @@ const SpielstrassePage = () => {
               <SectionHeader
                 label="Netzwerk"
                 title="Beteiligte der Initiative"
+                as="h3"
               />
               <ul className="space-y-2">
                 {partners.map((p) => (
@@ -182,6 +184,7 @@ const SpielstrassePage = () => {
               label="Kontakt"
               title="Ansprechpartnerin"
               centered
+              as="h3"
             />
             <ContactCard
               name="Katrin Stähler"

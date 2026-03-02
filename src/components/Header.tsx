@@ -81,7 +81,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav aria-label="Hauptnavigation" className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <div key={link.name} className="relative">
                 {link.dropdown ? (
@@ -166,7 +166,7 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 top-20 bg-warm-white z-40 animate-fade-in-up">
-          <nav className="flex flex-col p-6 gap-2">
+          <nav aria-label="Mobile Navigation" className="flex flex-col p-6 gap-2">
             {navLinks.map((link) => (
               <div key={link.name}>
                 {link.dropdown ? (

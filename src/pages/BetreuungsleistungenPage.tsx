@@ -189,6 +189,7 @@ const BetreuungsleistungenPage = () => {
               <SectionHeader
                 label="Kontakt"
                 title="Betreuungsleistungen anfragen"
+                as="h3"
               />
               <ContactCard
                 email="betreuungsleistungen2@drachenreiter.berlin"

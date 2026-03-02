@@ -101,6 +101,7 @@ const EingliederungshilfePage = () => {
             title="Fachliche Expertise"
             description="Unser Team bringt besondere Erfahrung in folgenden Bereichen mit:"
             centered
+            as="h3"
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {specializations.map((s) => (
@@ -118,6 +119,7 @@ const EingliederungshilfePage = () => {
             title="Ihre Ansprechpartnerinnen"
             description="Unsere Koordinatorinnen beraten Sie gerne zu allen Fragen der Eingliederungshilfe."
             centered
+            as="h3"
           />
           <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             <ContactCard

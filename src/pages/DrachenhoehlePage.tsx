@@ -168,6 +168,7 @@ const DrachenhoehlePage = () => {
               <SectionHeader
                 label="Kontakt"
                 title="Drachenhöhle erreichen"
+                as="h3"
               />
               <ContactCard
                 name="KiTa Drachenhöhle"

@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { ROUTES } from '@/lib/routes';
 
+const SITE_URL = 'https://drachenreiter.bizbrew.dev';
+
 interface Breadcrumb {
   label: string;
   to?: string;
@@ -14,6 +16,27 @@ interface PageHeroProps {
 }
 
 const PageHero = ({ title, subtitle, breadcrumbs }: PageHeroProps) => {
+  const breadcrumbJsonLd = breadcrumbs && breadcrumbs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Start',
+            item: SITE_URL + ROUTES.HOME,
+          },
+          ...breadcrumbs.map((crumb, i) => ({
+            '@type': 'ListItem',
+            position: i + 2,
+            name: crumb.label,
+            ...(crumb.to ? { item: SITE_URL + crumb.to } : {}),
+          })),
+        ],
+      }
+    : null;
+
   return (
     <section className="relative pt-32 pb-16 md:pt-36 md:pb-20 overflow-hidden">
       {/* Background */}
@@ -27,10 +50,17 @@ const PageHero = ({ title, subtitle, breadcrumbs }: PageHeroProps) => {
         }}
       />
 
+      {breadcrumbJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
+      )}
+
       <div className="container-custom relative z-10">
         {/* Breadcrumbs */}
         {breadcrumbs && breadcrumbs.length > 0 && (
-          <nav className="flex items-center gap-1.5 mb-6 text-sm font-body text-warm-white/60">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 mb-6 text-sm font-body text-warm-white/60">
             <Link to={ROUTES.HOME} className="hover:text-warm-white transition-colors">
               Start
             </Link>

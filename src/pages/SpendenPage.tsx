@@ -118,6 +118,7 @@ const SpendenPage = () => {
               <SectionHeader
                 label="Kontakt"
                 title="Fragen zu Spenden?"
+                as="h3"
               />
               <ContactCard
                 name="André Schumacher"

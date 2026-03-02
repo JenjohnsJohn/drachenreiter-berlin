@@ -127,6 +127,7 @@ const KonduktiveFoerderungPage = () => {
               label="Kontakt"
               title="Ansprechpartnerin"
               centered
+              as="h3"
             />
             <ContactCard
               name="Maike Dieckmann"

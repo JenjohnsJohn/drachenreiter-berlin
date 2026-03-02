@@ -162,6 +162,7 @@ const ScotsonTherapiePage = () => {
               <SectionHeader
                 label="Kontakt"
                 title="Ansprechpartnerin"
+                as="h3"
               />
               <ContactCard
                 name="Maike Dieckmann"
